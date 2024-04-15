@@ -168,7 +168,10 @@
 		</tr>
 		<tr>
 			<td><b>Horário de Funcionamento</b></td>
-			<td><b>Manhã</b><br>9h-12h<br><b>Tarde</b><br>13h-18h</td>
+			<td><b>Manhã</b><br>8h:30-12h<br><b>Tarde</b><br>13h-18h:30</td>
+		</tr>
+		<tr>
+			<td>Abertos Somente de Segunda a Sexta</td>
 		</tr>
 		
 		</table>

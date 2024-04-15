@@ -7,32 +7,37 @@
 <style>  
   
 	body{
-		background-color:#376141; 
+		background-color: #f0f5f5; /* Azul claro */
+		background-image: url(./imgs/cabecalho.png); 
 	}
 	#cabecalho{
 		margin: -8px;
-		height:200px;
-		background-image:url(./imgs/cabecalho.png);
-		border: 2px solid #0B610B;
+		height: 200px;
+		background-image: url(./imgs/cabecalho.png);
+		background-size: 1902px 250px;
+		border: 2px solid #1565c0; /* Azul escuro */
 	}
 	
 	.input-div{   
 		margin:25px;
 		float:right;
+		height:150px;
 	}
   
 	input[type=submit]{
-		background-color:#088A29;
-		padding:20px 30px;
+		background-color: #1565c0; /* Azul escuro */
+		padding:10px 20px;
+		height:50px;
 		font: bold 15px sans-serif;
 		color:white;
-		box-shadow:2px 2px 5px #000000;
+		box-shadow:2px 2px 5px #888888; /* Cinza */
 		cursor:pointer;
 		border:0px;
+		border-radius: 25px; /* Arredondar os cantos */
 	}
 	
 	input[type=submit]:hover{
-		box-shadow:1px 1px 5px #000000;
+		box-shadow:1px 1px 5px #888888; /* Cinza */
 	}
 	
 	#botao{
@@ -43,6 +48,7 @@
 	#logo{
 		float:left;
 		background-image:url(./imgs/logo_tipo.png);
+		background-size: 188px 75px;
 		margin-left:80px;
 		margin-top:90px;
 		width:180px;
@@ -51,7 +57,7 @@
   
 	#corpo{
 	    width:1000px;
-		background-color: #BCF5A9;
+		background-color: #da4e03;
 		margin: 8px auto 0px;
 	}
   
@@ -59,7 +65,7 @@
 	  margin: 30px  auto 30px;
 	  width:800px;
       height:100px;
-      border: 2px solid #0B610B;
+      border: 2px solid #f0f5f5;
       font: bold 25px sans-serif;
 	  color:white;
 	}
@@ -71,7 +77,7 @@
 	}
 	
 	#loading{
-		background-color:#A9F5A9;
+		background-color:#da4e03;
 		width:380px;
 		margin: 200px auto 0px;
 		overflow:hidden;
@@ -84,7 +90,7 @@
 	#img{
 		float:center;
 		border: 2px solid #0B610B;
-		background-color:#A9F5A9;
+		background-color:#da4e03;
 		margin:20px;
 		float:right;
 	}
@@ -103,7 +109,7 @@
 			$_SESSION["user"] = $user;
 						
 			// ===============================================================
-			include './base_dados/basedados.h';
+			include '../basedados/basedados.h';
 			include "./ConstUtilizadores.php";
 			//Selecionar usuário correspondente da base de dados
 			$sql = "SELECT * FROM utilizadores WHERE username = '".$_SESSION["user"]."'";
