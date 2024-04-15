@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - FormEST</title>
-    <meta name="description" content="A FormEST trata de todas as necessidades do seu animal. 
-Seja um corte de cabelo, uma simples lavagem ou a junção dos dois, a FormEST garante que o seu pet sai da loja ESTremamente lindo.">
+    <meta name="description" content="O teu caminho para o conhecimento começa aqui - Bem-vindo ao FormEST">
     <link rel="icon" type="image/png" sizes="499x251" href="logotipo.png">
 </head>
 
