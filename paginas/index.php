@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Web Site de Cursos de Formação</title>
+  <title>FormaEst - Cursos para Formação</title>
 </head>
 <style>  
   
@@ -11,8 +11,9 @@
 	}
 	#cabecalho{
 		margin: -8px;
-		height:200px;
+		height: 200px;
 		background-image: url(./imgs/cabecalho.png);
+		background-size: 1902px 250px;
 		border: 2px solid #1565c0; /* Azul escuro */
 	}
 	
@@ -51,6 +52,7 @@
 	#logo{
 		float:left;
 		background-image:url(./imgs/logo_tipo.png);
+		background-size: 188px 75px;
 		margin-left:80px;
 		margin-top:90px;
 		width:180px;
