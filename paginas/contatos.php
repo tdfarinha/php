@@ -98,6 +98,7 @@
 	}
 	th, td {
 		padding: 15px 50px;
+		font-weight: bold;
 	}
 	table#t01 tr:nth-child(even) {
 		background-color: #E3F2FD; /* Azul claro */
@@ -105,84 +106,73 @@
 	table#t01 tr:nth-child(odd) {
 		background-color: #BBDEFB; /* Azul médio */
 	}
-</style> 
- 
+</style>  
 <body>  
 	<!-- GRAFISMO CABECALHO -->
 <div id="cabecalho">
-	<a href='index.php'>
+    <a href='index.php'>
 		<div id="logo">
 		</div>
 	</a>
+    
     <div class= "input-div">
-		<div id="botoes"> 
-			<?php
-				ob_start();
-				session_start();
+      <div id="botoes">
+		<?php
+		ob_start();
+		session_start();
+		
+			if(isset($_SESSION["user"])){
+				echo " 
+				<div id='botao'>
+					<form action='./logout.php'>
+						<input type='submit' value='Logout'>
+					</form>
+				</div>
+				<div id='botao'>
+					<form action='./PgUtilizador.php'>
+						<input type='submit' value='Area Pessoal'>
+					</form>
+				</div>
+				";	
+			}else {
 				
-				if(isset($_SESSION["user"])){
-					
-					$user = $_SESSION["user"];
-					unset($_SESSION);
-					$_SESSION["user"] = $user;
-					
-					echo "
-						<div id='botao'>
-							<form action='./logout.php'>
-								<input type='submit' value='Logout'>
-							</form>
-						</div>
-						<div id='botao'>
-							<form action='./PgUtilizador.php'>
-								<input type='submit' value='Area Pessoal'>
-							</form>
-						</div>
-					";	
-				}else {
-					
-					echo "
-						<div id='botao'>
-							<form action='./PgLogin.php'>
-								<input type='submit' value='Login'>
-							</form>
-						</div>
-						<div id='botao'> 
-							<form action='./PgRegisto.php'>
-								<input type='submit' value='Registe-se'>
-							</form>
-						</div>
-					";
-					
-				}
-			?>
-			<div id='botao'>
-				<form action="contatos.php">
-					<input type='submit' value='Contactos'>
-				</form>
-			</div>
-		</div>
+				echo "
+				<div id='botao'>
+					<form action='./PgLogin.php'>
+						<input type='submit' value='Login'>
+					</form>
+				</div>
+				<div id='botao'> 
+				  <form action='./PgRegisto.php'>
+					<input type='submit' value='Registe-se'>
+				  </form>
+				</div>
+				";
+				
+			}
+		?>
+        <div id="botao">
+          <form action ="index.php">
+            <input type="submit" value="Página Principal">
+          </form>
+        </div>
+      </div>
     </div>
 </div>
-  <!-- GRAFISMO CORPO -->
-  <div id="corpo">
-    <h1>Bem-vindo ao FormaEst - Cursos para Formação!</h1>
-    <p>Seja bem-vindo(a) ao nosso site! Aqui você encontrará uma variedade de cursos para sua formação.</p>
-    
-    <h2>Tipos de Cursos:</h2>
-    <ul>
-        <li>CTSP (Cursos Técnicos de Nível Superior)</li>
-        <li>Licenciatura</li>
-        <li>Mestrado</li>
-    </ul>
-    
-    <h2>Cursos Disponíveis:</h2>
-    <ul>
-        <li>Curso de CTSP em Tecnologia da Informação</li>
-        <li>Licenciatura em Engenharia Informática</li>
-        <li>Mestrado em Grandes Projetos em PHP</li>
-        <!-- Podemos add mais cursos conforme seja preciso -->
-    </ul>
+<!-- GRAFISMO CORPO -->
+<div id="corpo">
+	<div id="tabela">
+		<table width='100%' id = 'tCont'>	
+		<tr>
+			<td> <div id="logo"></div></td><td>MORADA:<br>RUA Dos ESTUDANTES <br> LOTE DE CIMA </td>
+		</tr>
+		<tr>
+			<td><b>Horário de Funcionamento</b></td>
+			<td><b>Manhã</b><br>9h-12h<br><b>Tarde</b><br>13h-18h</td>
+		</tr>
+		
+		</table>
+	</div>
 </div>
-
 </body>
 </html>
