@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/04/2024 às 11:42
+-- Tempo de geração: 15/04/2024 às 23:15
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `estforma`
+-- Banco de dados: `formaest`
 --
 
 -- --------------------------------------------------------
@@ -49,6 +49,7 @@ CREATE TABLE `inscricoes` (
   `id_aluno` int(11) NOT NULL,
   `id_curso` int(11) NOT NULL,
   `data_inscricao` datetime NOT NULL,
+  `v_exam_nacional` int(20) NOT NULL,
   `status_inscricao` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -130,17 +131,18 @@ CREATE TABLE `utilizadores` (
   `endereco` varchar(100) NOT NULL,
   `telefone` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `tipo_user` int(11) NOT NULL
+  `tipo_user` int(11) NOT NULL,
+  `imagem` varchar(30) NOT NULL DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `utilizadores`
 --
 
-INSERT INTO `utilizadores` (`id_user`, `username`, `nome`, `password`, `endereco`, `telefone`, `email`, `tipo_user`) VALUES
-(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Rua do Admin 1', '933888694', 'admin@formaest.pt', 1),
-(2, 'docente', 'docente', 'ac99fecf6fcb8c25d18788d14a5384ee', 'Rua do Docente 1', '933888593', 'docente@formaest.pt', 2),
-(3, 'aluno', 'aluno', 'ca0cd09a12abade3bf0777574d9f987f', 'Rua do Aluno 1', '933888492', 'aluno@gmail.com', 3);
+INSERT INTO `utilizadores` (`id_user`, `username`, `nome`, `password`, `endereco`, `telefone`, `email`, `tipo_user`, `imagem`) VALUES
+(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Rua do Admin 1', '933888694', 'admin@formaest.pt', 1, 'admin.png'),
+(2, 'docente', 'docente', 'ac99fecf6fcb8c25d18788d14a5384ee', 'Rua do Docente 1', '933888593', 'docente@formaest.pt', 2, 'docente.png'),
+(3, 'aluno', 'aluno', 'ca0cd09a12abade3bf0777574d9f987f', 'Rua do Aluno 1', '933888492', 'aluno@gmail.com', 3, 'aluno.png');
 
 --
 -- Índices para tabelas despejadas

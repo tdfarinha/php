@@ -165,6 +165,7 @@
 						echo "<div id='corpo'>";
 						printDadosPessoais();
 						printGestãoReservas();
+						printGestãoInscrições();
 						echo"</div>";
 					break;
 											
@@ -204,8 +205,8 @@
 			//Contactos
 			echo 
 			"<div class='botaoCorpo'>
-				<form action='./PgGestCabanas.php'>
-					<input type='submit' value='Gestão Cabanas' id='btCorpo'>
+				<form action='./PgGestIncricoes.php'>
+					<input type='submit' value='Gestão Inscrições' id='btCorpo'>
 				</form>
 			</div>";
 			
