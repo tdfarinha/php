@@ -204,7 +204,7 @@
 			//Dados Pessoais
 			echo
 			"<div class='botaoCorpo'>
-				<form action= './DadosPessoais.php' method='GET'>
+				<form action= './DadosPessoais.php' method='POST'>
 					<input type='text' name='IdUser' value='".$_SESSION["user"]."' hidden/>
 					<input type='submit' value='Dados Pessoais' id='btCorpo'/>
 				</form>

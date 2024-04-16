@@ -1,5 +1,5 @@
 <?php
-$id_user = $_GET["IdUser"]; 
+$id_user = $_POST["IdUser"]; 
 include "../basedados/basedados.h";
 
 $sql = "SELECT * FROM utilizadores WHERE username='$id_user'"; 
