@@ -154,27 +154,25 @@
 						//==============================ADMINISTRADOR===============================//
 						echo "<div id='corpo'>";
 						printDadosPessoais();
-						printGestãoReservas();
-						printGestãoUtilizadores();
 						printGestãoInscrições();
+						printGestãoUtilizadores();
 						echo"</div>";
 					break;
 					
 					case DOCENTE:
-						//===============================FUNCIONARIO================================//
+						//===============================DOCENTE================================//
 						echo "<div id='corpo'>";
 						printDadosPessoais();
-						printGestãoReservas();
 						printGestãoInscrições();
 						echo"</div>";
 					break;
 											
 					case ALUNO:
-						//=================================CLIENTE==================================//
+						//=================================ALUNO==================================//
 						echo "<div id='corpo'>";
-						printContactos();
-						printGestãoReservas();
 						printDadosPessoais();
+						printGestãoInscrições();
+						printContactos();
 						echo"</div>";
 					break;
 					
@@ -219,26 +217,6 @@
 				<form action= './DadosPessoais.php' method='GET'>
 					<input type='text' name='IdUser' value='".$_SESSION["user"]."' hidden/>
 					<input type='submit' value='Dados Pessoais' id='btCorpo'/>
-				</form>
-			</div>";
-		}
-
-		function printGestãoQuotas(){
-			//Quotas
-			echo 
-			"<div class='botaoCorpo'>
-				<form action='./PgQuotas.php'>
-					<input type='submit' value='Gestão Quotas' id='btCorpo'>
-				</form>
-			</div>";
-		}
-		
-		function printGestãoReservas(){
-			//Gestão Reservas
-			echo
-			"<div class='botaoCorpo'>
-				<form action='./PgGestReservas.php'>
-					<input type='submit' value='Gestão Reservas' id='btCorpo'>
 				</form>
 			</div>";
 		}
