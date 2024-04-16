@@ -58,6 +58,7 @@
 		margin-top:90px;
 		width:180px;
 		height:60px;
+		border-radius: 25px; /* Arredondar os cantos */
 	}
 	
 	a:link{
@@ -77,6 +78,7 @@
 		background-image: url(./imgs/cabecalho.png);
 		background-size: 1902px 250px;
 		border: 2px solid #1565c0; /* Azul escuro */
+		border-radius: 25px; /* Arredondar os cantos */
 		
 	}
 	#tabela{

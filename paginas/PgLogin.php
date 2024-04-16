@@ -11,10 +11,11 @@
   #login-box{
     background-color:#f0f5f5; /* Azul claro */
     width:380px;
-    height:260px;
+    height:300px;
     margin: 140px auto 0px;
     overflow:hidden;
     box-shadow:0px 0px 5px #6F6666;
+    border-radius: 25px; /* Arredondar os cantos */
   }
   
   #login-cabecalho{
@@ -39,6 +40,7 @@
     padding-left:7px;
     font: normal 13px sans-serif;
     color:#1565c0; /* Azul escuro */
+    border-radius: 25px; /* Arredondar os cantos */
   }
   #input-pass{
     margin-top:-15px;
@@ -59,7 +61,7 @@
   
   #volta{
     float:left;
-    margin-top:-10px;
+    margin-top:20px;
   }
   
   input[type=submit]{
@@ -77,6 +79,23 @@
   
   input[type=submit]:hover{
     box-shadow:1px 1px 5px #6F6666;
+  }
+  
+  button {
+    background-color: #f3ac1e;
+    padding: 10px 20px;
+    margin-top:-5px;
+    font: bold 13px sans-serif;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #ffffff;
+    margin-right: 20px; /* Adiciona um espaço à direita */
+    border-radius: 25px; /* Arredondar os cantos */
+  }
+  
+  button:hover {
+    box-shadow: 1px 1px 5px #6F6666;
   }
   
 </style>
@@ -108,8 +127,8 @@
 		  
 		  <div id="acoes">
 			<input type="submit" value ="Login">
-			<div id = "registo"><a href="./PgRegisto.php">Registe-se...</a></div>
-			<br><div id = "volta"><a href="./index.php">Página Principal</a></div>
+      <div id='registo'><button type='submit' formaction='./PgRegisto.php'>Registe-se...</button></div>
+      <div id='volta'><button type='submit' formaction='./index.php'>Página Principal</button></div>
 		  </div>
 	  </form>
 	</div>

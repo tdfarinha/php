@@ -53,12 +53,15 @@
 		margin-top:90px;
 		width:180px;
 		height:60px;
+		border-radius: 25px; /* Arredondar os cantos */
 	}
   
 	#corpo{
 	    width:1000px;
 		background-color: #da4e03;
 		margin: 8px auto 0px;
+		border: 2px solid #1565c0;
+		border-radius: 25px; /* Arredondar os cantos */
 	}
   
 	#btCorpo{
@@ -89,10 +92,11 @@
 	
 	#img{
 		float:center;
-		border: 2px solid #0B610B;
+		border: 2px solid #1565c0;
 		background-color:#da4e03;
 		margin:20px;
 		float:right;
+		border-radius: 25px; /* Arredondar os cantos */
 	}
 </style>  
 <body>  
@@ -172,7 +176,6 @@
 						echo "<div id='corpo'>";
 						printDadosPessoais();
 						printGestãoInscrições();
-						printContactos();
 						echo"</div>";
 					break;
 					
@@ -184,20 +187,7 @@
 			
 		}else
 			echo "<script>setTimeout(function(){ window.location.href = '.(logout.php'; }, 0)</script>";
-			
-			
-			
-			
-		function printContactos(){
-			//Contactos
-			echo 
-			"<div class='botaoCorpo'>
-				<form action='./contatos.php'>
-					<input type='submit' value='Contactos' id='btCorpo'>
-				</form>
-			</div>";
-			
-		}
+		
 		
 		function printGestãoInscrições(){
 			//Contactos

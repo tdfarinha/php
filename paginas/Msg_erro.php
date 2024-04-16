@@ -14,6 +14,7 @@
     margin: 140px auto 0px;
     overflow:hidden;
     box-shadow:0px 0px 5px #ffffff;
+    border-radius: 25px; /* Arredondar os cantos */
   }
   
   #erro-cabecalho{
@@ -53,6 +54,7 @@
     cursor: pointer;
     box-shadow: 2px 2px 5px #ffffff;
     margin-right: 20px; /* Adiciona um espaço à direita */
+    border-radius: 25px; /* Arredondar os cantos */
   }
   
   button:hover {
