@@ -1,5 +1,6 @@
 <html>
 <head>
+<title>FormaEst - Cursos para Formação</title>
 <style>
   body{
     background-color: #f0f5f5; /* Azul claro */

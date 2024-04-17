@@ -1,5 +1,6 @@
 <html>
 <head>
+<title>FormaEst - Cursos para Formação</title>
 <style>
 	body{
 		background-image:url(./imgs/cabecalho.png);

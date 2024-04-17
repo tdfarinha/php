@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>FormaEst - Cursos para Formação</title>
 <style>
   body{
     background-image:url(./imgs/atencao.png);

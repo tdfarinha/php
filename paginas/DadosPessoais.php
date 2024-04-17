@@ -1,5 +1,5 @@
 <?php
-$id_user = $_POST["IdUser"]; 
+$id_user = $_POST["IdUser"];
 include "../basedados/basedados.h";
 
 $sql = "SELECT * FROM utilizadores WHERE username='$id_user'"; 
@@ -10,6 +10,7 @@ $dados_user = mysqli_fetch_array ($res);
 <html>
 <head>
 <meta charset="UTF-8">
+<title>FormaEst - Cursos para Formação</title>
 <style>
   body{
     background-color: #f0f5f5; /* Azul claro */
@@ -18,7 +19,7 @@ $dados_user = mysqli_fetch_array ($res);
     background-size: 1902px 1080px;
   }
   
-  #registo-box{
+  #atualizar-box{
     background-color:#f0f5f5; /* Azul claro */
     width:380px;
     height:580px;
@@ -28,7 +29,7 @@ $dados_user = mysqli_fetch_array ($res);
     border-radius: 25px; /* Arredondar os cantos */
   }
   
-  #registo-cabecalho{
+  #atualizar-cabecalho{
     background-color:#1565c0; /* Azul escuro */
     height:50x;
     border-bottom:2px solid #1565c0; /* Azul escuro */
@@ -76,7 +77,7 @@ $dados_user = mysqli_fetch_array ($res);
     margin:25px;
   }
   
-  #registo{
+  #atualizar{
     float:left;
     margin-top:-10px;
   }
@@ -133,20 +134,22 @@ $dados_user = mysqli_fetch_array ($res);
 </style>
 <body>
 
-	<!-- <?php
+	<?php
 		session_start();
-		if(isset($_SESSION["user"]))
-			echo "<script> setTimeout(function () { window.location.href = './PgUtilizador.php'; }, 0)</script>";
+		if(!isset($_SESSION["user"]))
+			echo "<script> setTimeout(function () { window.location.href = './index.php'; }, 0)</script>";
 	
-	?> -->
+	?>
 	
-	<div id="registo-box">
-	  <div id="registo-cabecalho">Dados Pessoais <?php echo $dados_user["username"]; ?></div>
+	<div id="atualizar-box">
+	  <div id="atualizar-cabecalho">Dados Pessoais <?php echo $dados_user["username"]; ?></div>
 	  
 	  <form action="atualizar.php" method="POST">
+    <input type="hidden" name="IdUser" value="<?php echo $dados_user["username"]; ?>">
 		  <div class="input-div" id="input-user">
-			 Nome de utilizador:
-			 <input type="text" name="user" value="<?php echo $dados_user["username"]; ?>"/>
+			 Username:
+			 <input type="text" name="user" value="<?php echo $dados_user["username"]; ?>" readonly/>
+       <p style="font-size: 12px; color: #f3ac1e;">Este campo é apenas para visualização. Para alterá-lo, entre em contato com o administrador.</p>
 		  </div> 
 		  
 		  <!-- <div class="input-div" id="input-pass">
@@ -174,7 +177,7 @@ $dados_user = mysqli_fetch_array ($res);
 			 <input type="text" name="telemovel" value="<?php echo $dados_user["telefone"]; ?>"/>             
 		  </div>
 		  
-		  <!--=====================registo=====================-->
+		  <!--=====================Atualizar=====================-->
 		  
 		  <div id="acoes">
 			<input type="submit" value ="Atualizar">

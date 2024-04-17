@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>3vago</title>
+  <title>FormaEst - Cursos para Formação</title>
 </head>
 <style>
 	body{
