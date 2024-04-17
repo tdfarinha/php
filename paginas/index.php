@@ -167,7 +167,7 @@
 </div>
   <!-- GRAFISMO CORPO -->
   <div id="corpo">
-    <h1>Bem-vindo ao FormaEst!</h1>
+    <h1>Bem-vindo ao FormaEst - Cursos para Formação!</h1>
     <p>Seja bem-vindo(a) ao nosso site! Aqui você encontrará uma variedade de cursos para sua formação.</p>
     
     <h2>Tipos de Cursos:</h2>
