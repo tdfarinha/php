@@ -85,6 +85,11 @@ $dados_user = mysqli_fetch_array ($res);
 	float:left;
     margin-top:-10px;
   }
+
+  #reset{
+	float:left;
+    margin-top: 20px;
+    }
   
   input[type=submit]{
     float:right;
@@ -115,6 +120,11 @@ $dados_user = mysqli_fetch_array ($res);
     margin-right: 20px; /* Adiciona um espaço à direita */
     border-radius: 25px; /* Arredondar os cantos */
   }
+
+  #reset {
+    background-color: red;
+  }
+
   
   button:hover {
     box-shadow: 1px 1px 5px #6F6666;
@@ -139,10 +149,10 @@ $dados_user = mysqli_fetch_array ($res);
 			 <input type="text" name="user" value="<?php echo $dados_user["username"]; ?>"/>
 		  </div> 
 		  
-		  <div class="input-div" id="input-pass">
+		  <!-- <div class="input-div" id="input-pass">
 			  Password:
 			 <input type="password" name="pass" value="<?php echo $dados_user["password"]; ?>"/>
-		  </div>
+		  </div> -->
 
           <div class="input-div" id="input-email">
 			  E-mail:
@@ -169,6 +179,7 @@ $dados_user = mysqli_fetch_array ($res);
 		  <div id="acoes">
 			<input type="submit" value ="Atualizar">
       <div id='volta'><button type='submit' formaction='./PgUtilizador.php'>Página Utilizador</button></div>
+      <div> <button id ='reset' type='submit' formaction='./ResetPassword.php'>Reset Password</button></div>
 	  </form>
 	</div>
  
