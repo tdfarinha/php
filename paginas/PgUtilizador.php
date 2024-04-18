@@ -109,8 +109,6 @@
 			
 				
 			$user = $_SESSION["user"];
-			unset($_SESSION);
-			$_SESSION["user"] = $user;
 						
 			// ===============================================================
 			include '../basedados/basedados.h';
@@ -183,11 +181,14 @@
 				}
 				
 			}else{
-				echo "<script>setTimeout(function(){ window.location.href = './logout.php'; }, 0)</script>";
+				header("Location:./logout.php"); //envia para logout
+                die(); //Para a execução do PHP
 			}
 			
-		}else
-			echo "<script>setTimeout(function(){ window.location.href = '.(logout.php'; }, 0)</script>";
+		}else{
+			header("Location:./logout.php"); //envia para logout
+            die(); //Para a execução do PHP
+		}
 		
 		
 		function printGestãoInscrições(){

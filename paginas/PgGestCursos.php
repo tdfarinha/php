@@ -185,12 +185,12 @@
 				$pode=true;
 				
 				if($tipo_user!=ADMINISTRADOR){
-					$pode=false;
-					echo "<script> setTimeout(function () { window.location.href = './index.php'; }, 000)</script>";
+                    header("Location:./index.php"); //envia para pagina
+                    die(); //Para a execução do PHP
 				}
 				
 				if($pode){
-					// ====================================================
+					// =========================Cursos===========================
 					$sql = "SELECT * FROM cursos";
 					$retval = mysqli_query( $conn, $sql );
 					if(! $retval ){
@@ -203,7 +203,7 @@
 						<th>Data Início:</th>
 						<th>Data Termino:</th>
                         <th>Limite de Alunos:</th>
-                        <th>Limite de Alunos:</th>
+                        <th>Docente:</th>
 						<th>Validar:</th>
 						<th>Editar:</th>
 						<th>Apagar/Inativar:</th>
@@ -212,21 +212,23 @@
 						echo"
 						<tr>
 							<td>".$row["titulo"]."</td>
-							<td>".getDescricaoUtilizador($row["tipo_user"])."</td>
-							<td>".$row["telefone"]  ."</td>";                            
+							<td>".$row["data_inicio"]  ."</td>
+                            <td>".$row["data_fim"]  ."</td>
+                            <td>".$row["limite_alunos"]  ."</td>
+                            <td>".getNomeDocente($row["id_docente"], $conn)."</td>";                           
 						//VALIDAR						
-						if($row["tipo_user"] == ALUNO_NAO_VALIDADO)
-							echo"	<td><a href='./validar.php?IdUser=".$row["username"]."' ><img src='./imgs/validar.png' width=50 height=50></a></td>";
+						if($tipo_user == ALUNO_NAO_VALIDADO)
+							echo"	<td><a href='./validar.php?IdUser=".$_SESSION["user"]."' ><img src='./imgs/validar.png' width=50 height=50></a></td>";
 						else
 							echo"<td></td>";
 						//EDITAR
-						if($row["tipo_user"] != UTILIZADOR_APAGADO){
-							echo"	<td><a href='preparaEditar.php?IdUser=".$row["username"]."' ><img src='./imgs/editar.png' width=50 height=50></a></td>";
+						if($tipo_user != UTILIZADOR_APAGADO){
+							echo"	<td><a href='preparaEditar.php?IdUser=".$_SESSION["user"]."' ><img src='./imgs/editar.png' width=50 height=50></a></td>";
 						}else
 							echo"<td></td>";
 						//PROMOVER
-						if($row["tipo_user"] != ADMINISTRADOR)
-							echo "<td><a href='PgDespromover.php?IdUser=".$row["username"]."' ><img src='./imgs/remove.png' width=50 height=50></a></td>";
+						if($tipo_user != ADMINISTRADOR)
+							echo "<td><a href='PgDespromover.php?IdUser=".$_SESSION["user"]."' ><img src='./imgs/remove.png' width=50 height=50></a></td>";
 						else
 							echo"<td></td>";
 						
@@ -262,6 +264,17 @@
 				}
 				
 			}
+
+            function getNomeDocente($idDocente, $conn) {
+                $sql = "SELECT username FROM utilizadores WHERE id_user = $idDocente";
+                $retval = mysqli_query($conn, $sql);
+                if (!$retval) {
+                    die('Could not get data: ' . mysqli_error($conn));
+                }
+                $row = mysqli_fetch_array($retval);
+                return $row["username"];
+            }
+            
 			
 		?>
 		
