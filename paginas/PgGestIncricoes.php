@@ -23,6 +23,7 @@
 		margin:25px;
 		float:right;
 		height:150px;
+		
 	}
   
 	input[type=submit]{
@@ -85,34 +86,41 @@
 		background-image: url(./imgs/cabecalho.png);
 		background-size: 1902px 250px;
 		border: 2px solid #1565c0; /* Azul escuro */
-		border-radius: 25px; /* Arredondar os cantos */
-		
+								
 	}
+
 	td {
 		font: normal 15px sans-serif;
+		
 		
 	}
 	
 	th {
 		font: bold 15px sans-serif;
 		text-align: left
+		
 	}
 	table, th, td {
 		
 		border-collapse: collapse;
+		
     		
 	}
 	th, td {
 		padding: 15px 20px;
 	}
+
+
 	table#t01 tr:nth-child(even) {
 		color:white;
 		background-color: #1565c0;
-        border-radius: 25px; /* Arredondar os cantos */
+		
+        
 	}
 	table#t01 tr:nth-child(odd) {
 		background-color: #f0f5f5;
-		border-radius: 25px; /* Arredondar os cantos */
+		
+		
 	}
 	
 	#btnNv{
@@ -197,8 +205,8 @@
 					echo "<table width='100%' id = 't01'>
 					<tr>
 						<th>Nome Utilizador:</th>
-						<th>Tipo:</th>
-						<th>Telemóvel:</th>
+						<th>Aluno:</th>
+						<th>Curso:</th>
 						<th>Validar:</th>
 						<th>Editar:</th>
 						<th>Apagar/Inativar:</th>
