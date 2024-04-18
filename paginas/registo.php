@@ -23,12 +23,13 @@
 <body>
 </body>
 </html>  
-  
+
 <?php
+
 session_start();
 
 if(isset($_POST["user"]) && isset($_POST["pass"]) && isset($_POST["email"]) && isset($_POST["imagem"]) && isset($_POST["morada"]) && isset($_POST["telemovel"]) && !empty($_POST["user"]) && !empty($_POST["pass"]) && !empty($_POST["email"]) && !empty($_POST["imagem"]) && !empty($_POST["morada"]) && !empty($_POST["telemovel"])){
-	
+
 	//Dados do formulário
 	$utilizador = $_POST["user"];
 	$password = $_POST["pass"];
@@ -38,25 +39,17 @@ if(isset($_POST["user"]) && isset($_POST["pass"]) && isset($_POST["email"]) && i
 	$telemovel = $_POST["telemovel"];
 	include '../basedados/basedados.h';
 	include './ConstUtilizadores.php';
-	
-	// Preparar a senha
-	$hashed_password = md5($password);
-
-	// Inserir dados no banco de dados
+	//==================================================================//
+	//Selecionar user correspondente da base de dados
 	$sql = "INSERT INTO utilizadores (username, email, imagem, endereco, password, telefone, tipo_user) 
-					VALUES ('".$utilizador."', '".$email."','".$imagem."','".$morada."','".$hashed_password."','".$telemovel."', '4');";
-	
-	$res = mysqli_query($conn, $sql);
-
-	if($res) {
-		echo "<div id='loading'>Loading...</div><script> setTimeout(function () { window.location.href = 'secreta.php'; }, 1000)</script>";
-	} else {
-		echo "Erro: " . mysqli_error($conn); // Exibir erro SQL
+					VALUES ('".$utilizador."', '".$email."','".$imagem."','".$morada."','".md5($password)."','".$telemovel."', '4');";
+	$res = mysqli_query ($conn, $sql);
+	if(! $res ){
+		die('Could not get data: ' . mysqli_error($conn));// se não funcionar dá erro
 	}
-
-	mysqli_close($conn); // Fechar a conexão
-} else {
+	echo "<div id='loading'>Loading...</div><script> setTimeout(function () { window.location.href = 'secreta.php'; }, 1000)</script>";	
+}else{
 	session_destroy();
-	header("refresh:0;url=./index.php");
+	header("refresh:0;url = ./index.php");
 }
 ?>
