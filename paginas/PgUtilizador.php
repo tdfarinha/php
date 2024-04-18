@@ -158,8 +158,9 @@
 						//==============================ADMINISTRADOR===============================//
 						echo "<div id='corpo'>";
 						printDadosPessoais();
-						printGestãoInscrições();
 						printGestãoUtilizadores();
+						printGestãoCursos();
+						printGestãoInscrições();
 						echo"</div>";
 					break;
 					
@@ -217,6 +218,16 @@
 			"<div class='botaoCorpo'>
 				<form action='./PgGestUtilizadores.php'>
 					<input type='submit' value='Gestão Utilizadores' id='btCorpo'>
+				</form>
+			</div>";
+		}
+
+		function printGestãoCursos(){
+			//Gestão Cursos
+			echo 
+			"<div class='botaoCorpo'>
+				<form action='./PgGestCursos.php'>
+					<input type='submit' value='Gestão Cursos' id='btCorpo'>
 				</form>
 			</div>";
 		}
