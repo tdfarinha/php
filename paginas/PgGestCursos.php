@@ -162,7 +162,7 @@
   <!-- GRAFISMO CORPO -->
 <div id="corpo">
 	
-	<form action="./PgNaoExiste.php">
+	<form action="./PgCursoRegisto.php">
 		<input type='submit' value='Novo Curso' id="btnNv">
 	</form>
 	
