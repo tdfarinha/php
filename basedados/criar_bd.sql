@@ -130,7 +130,6 @@ INSERT INTO `tipo_utilizador` (`id_tipo_utilizador`, `descricao`) VALUES
 CREATE TABLE `utilizadores` (
   `id_user` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `nome` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `telefone` varchar(20) NOT NULL,
@@ -143,10 +142,10 @@ CREATE TABLE `utilizadores` (
 -- Despejando dados para a tabela `utilizadores`
 --
 
-INSERT INTO `utilizadores` (`id_user`, `username`, `nome`, `password`, `endereco`, `telefone`, `email`, `tipo_user`, `imagem`) VALUES
-(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Rua do Admin 1', '933888694', 'admin@formaest.pt', 1, 'admin.png'),
-(2, 'docente', 'docente', 'ac99fecf6fcb8c25d18788d14a5384ee', 'Rua do Docente 1', '933888593', 'docente@formaest.pt', 2, 'docente.png'),
-(3, 'aluno', 'aluno', 'ca0cd09a12abade3bf0777574d9f987f', 'Rua do Aluno 1', '933888492', 'aluno@gmail.com', 3, 'aluno.png');
+INSERT INTO `utilizadores` (`id_user`, `username`, `password`, `endereco`, `telefone`, `email`, `tipo_user`, `imagem`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Rua do Admin 1', '933888694', 'admin@formaest.pt', 1, 'admin.png'),
+(2, 'docente', 'ac99fecf6fcb8c25d18788d14a5384ee', 'Rua do Docente 1', '933888593', 'docente@formaest.pt', 2, 'docente.png'),
+(3, 'aluno','ca0cd09a12abade3bf0777574d9f987f', 'Rua do Aluno 1', '933888492', 'aluno@gmail.com', 3, 'aluno.png');
 
 --
 -- Índices para tabelas despejadas
