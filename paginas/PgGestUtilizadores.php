@@ -213,7 +213,7 @@
 							<td>".getDescricaoUtilizador($row["tipo_user"])."</td>
 							<td>".$row["telefone"]  ."</td>";
 						//VALIDAR						
-						if($row["tipo_user"] == ALUNO_NAO_VALIDADO)
+						if($row["tipo_user"] == UTILIZADOR_NAO_VALIDADO)
 							echo"	<td><a href='./validar.php?IdUser=".$row["username"]."' ><img src='./imgs/validar.png' width=50 height=50></a></td>";
 						else
 							echo"<td></td>";
@@ -248,7 +248,7 @@
 					case ALUNO:
 						return "Aluno";
 					break;
-					case ALUNO_NAO_VALIDADO:
+					case UTILIZADOR_NAO_VALIDADO:
 						return "Aluno Não Validado";
 					break;
 					case UTILIZADOR_APAGADO:

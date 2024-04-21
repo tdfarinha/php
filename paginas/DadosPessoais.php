@@ -148,8 +148,7 @@ $dados_user = mysqli_fetch_array ($res);
     <input type="hidden" name="IdUser" value="<?php echo $dados_user["username"]; ?>">
 		  <div class="input-div" id="input-user">
 			 Username:
-			 <input type="text" name="user" value="<?php echo $dados_user["username"]; ?>" readonly/>
-       <p style="font-size: 12px; color: #f3ac1e;">Este campo é apenas para visualização. Para alterá-lo, entre em contato com o administrador.</p>
+			 <input type="text" name="user" value="<?php echo $dados_user["username"]; ?>"/>
 		  </div> 
 		  
 		  <!-- <div class="input-div" id="input-pass">

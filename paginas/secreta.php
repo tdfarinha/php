@@ -24,7 +24,7 @@ if(!isset($_SESSION["user"]) || !isset($_SESSION["tipo"])){
 	
 }else{
 	include "./ConstUtilizadores.php";
-	if($_SESSION["tipo"] == ALUNO_NAO_VALIDADO){
+	if($_SESSION["tipo"] == UTILIZADOR_NAO_VALIDADO){
 		
 		$_SESSION["bt"] = "Voltar";
 		$_SESSION["erro"] = "Conta Ainda Não validada!<br>Por favor, Tente mais tarde!";
@@ -42,6 +42,5 @@ if(!isset($_SESSION["user"]) || !isset($_SESSION["tipo"])){
 		echo " <script> alert ('Fez Login') </script>";
 		echo "<script>  setTimeout(function () { window.location.href = './PgUtilizador.php'; }, 0000)</script>";	
 	}
-}
-	
+}	
 ?>

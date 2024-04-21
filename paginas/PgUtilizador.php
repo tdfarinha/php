@@ -106,10 +106,7 @@
 		session_start();
 		
 		if(isset($_SESSION["user"])){
-			
-				
-			$user = $_SESSION["user"];
-						
+									
 			// ===============================================================
 			include '../basedados/basedados.h';
 			include "./ConstUtilizadores.php";
@@ -121,7 +118,7 @@
 			}
 			$row = mysqli_fetch_array($retval);
 			
-			if($row["tipo_user"] != ALUNO_NAO_VALIDADO && $row["tipo_user"] != UTILIZADOR_APAGADO){
+			if($row["tipo_user"] != UTILIZADOR_NAO_VALIDADO && $row["tipo_user"] != UTILIZADOR_APAGADO){
 				// ===============================================================
 				
 				echo"<div id='cabecalho'>
@@ -192,7 +189,7 @@
 		
 		
 		function printGestãoInscrições(){
-			//Contactos
+			//Gestão de  Incrições
 			echo 
 			"<div class='botaoCorpo'>
 				<form action='./PgGestIncricoes.php'>

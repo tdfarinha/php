@@ -217,7 +217,7 @@
                             <td>".$row["limite_alunos"]  ."</td>
                             <td>".getNomeDocente($row["id_docente"], $conn)."</td>";                           
 						//VALIDAR						
-						if($tipo_user == ALUNO_NAO_VALIDADO)
+						if($tipo_user == UTILIZADOR_NAO_VALIDADO)
 							echo"	<td><a href='./validar.php?IdUser=".$_SESSION["user"]."' ><img src='./imgs/validar.png' width=50 height=50></a></td>";
 						else
 							echo"<td></td>";
@@ -252,7 +252,7 @@
 					case ALUNO:
 						return "Aluno";
 					break;
-					case ALUNO_NAO_VALIDADO:
+					case UTILIZADOR_NAO_VALIDADO:
 						return "Aluno Não Validado";
 					break;
 					case UTILIZADOR_APAGADO:

@@ -118,7 +118,7 @@ INSERT INTO `tipo_utilizador` (`id_tipo_utilizador`, `descricao`) VALUES
 (1, 'Administrador'),
 (2, 'Docente'),
 (3, 'Aluno'),
-(4, 'Aluno não validado'),
+(4, 'Utilizador não validado'),
 (5, 'Utilizador Apagado');
 
 -- --------------------------------------------------------

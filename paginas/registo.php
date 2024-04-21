@@ -1,8 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>3vago</title>
-</head>
+  <title>FormaEst - Cursos para Formação</title>
 <style>
 	body{
 		background-image:url(./imgs/fundoLogin.jpg);
@@ -10,6 +9,17 @@
 	}
 	#loading{
 		background-color:#A9F5A9;
+		width:380px;
+		height:50px;
+		margin: 200px auto 0px;
+		overflow:hidden;
+		box-shadow:0px 0px 5px #6F6666;
+		text-align:center;
+		font: bold 20px/50px sans-serif;
+		color: white;
+	}
+	#erro{
+		background-color:#6F6666;
 		width:380px;
 		height:50px;
 		margin: 200px auto 0px;
@@ -49,6 +59,7 @@ if(isset($_POST["user"]) && isset($_POST["pass"]) && isset($_POST["email"]) && i
 	}
 	echo "<div id='loading'>Loading...</div><script> setTimeout(function () { window.location.href = 'secreta.php'; }, 1000)</script>";	
 }else{
+	echo "<div id='erro'>Algo inesperado aconteceu...</div><script> setTimeout(function () { window.location.href = 'secreta.php'; }, 5000)</script>";
 	session_destroy();
 	header("refresh:0;url = ./index.php");
 }
